@@ -153,6 +153,10 @@ no-js #loader { display: none;  }
 		margin-top: 0em !important;
 	}
 
+	.section-2 img{
+		padding: 17% 0% 5% !important;
+	}
+
 }
 
 
