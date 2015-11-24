@@ -149,6 +149,10 @@ no-js #loader { display: none;  }
 		width: 45px !important;
 	}
 
+	.section-2 .row{
+		margin-top: 0em !important;
+	}
+
 }
 
 
