@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html ng-app="landingPage" ng-controller="VideoCtrl">
+<head>
+	<title>plugzee</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Boostrap v3.3.5 -->
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+	<!-- Fullpage.js -->
+	<link rel="stylesheet" type="text/css" href="bower_components/fullpage.js/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/test.css">
+	<!-- Line-icons -->
+	<!-- <link rel="stylesheet" type="text/css" href="font/css/font-lineicons.css"> -->
+	<!-- ngDialog -->
+	<link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+	<!-- Hover.css -->
+	<link rel="stylesheet" type="text/css" href="hover/css/hover.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	 -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- // <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> -->
+	<script type="text/javascript">
+		$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut(500);;
+	});
+	</script>
+</head>
+<body>
+	<div class="se-pre-con"></div>	
+	<header>
+		<div class="container text-center navigation" ng-controller="MenuCtrl">
+			<div class="row desktop">
+				<span class="col-md-2 col-sm-2 logo">plugzee</span>
+				<span class="col-md-8 col-sm-8 navbar-links">
+					<a href="#home" class="hvr-underline-from-center"><p>HOME</p></a>
+					<a href="#about" class="hvr-underline-from-center"><p>ABOUT</p></a>
+					<a href="#indiegogo" class="hvr-underline-from-center"><p>INDIEGOGO</p></a>
+					<a href="#contact" class="hvr-underline-from-center"><p>CONTACT</p></a>
+				</span>
+				<span class="col-md-2 col-sm-2 navbar-links order-now-align"><span class="order-now">PRE-ORDER</span></span>
+			</div>
+			<div class="mobile navbar-header navigation row">
+				
+				<div class="col-xs-6 text-left">
+					<span class="col-md-2 logo">plugzee</span>
+				</div>
+				<div class="col-xs-6 menu">
+					<!-- <button type="button" class=" order-now" ng-click="showMe()">Menu</button> -->
+					<span class="order-now">PRE-ORDER</span>
+				</div>
+				
+			</div>
+<!-- 			<div class="row" id="mobile-menu" ng-hide="show">
+				<div  class=" col-md-12 text-center">
+					<a href="#home"><p>HOME</p></a>
+					<a href="#about"><p>ABOUT</p></a>
+					<a href="#indiegogo"><p>INDIEGOGO</p></a>
+					<a href="#contact"><p>CONTACT</p></a>
+				</div>
+			</div> -->
+		</div>
+	</header>
+
+	<div class="share-buttons">
+		<a href=""><img src="assets/images/fb.svg"></a>
+		<a href=""><img src="assets/images/twitter.svg"></a>
+	</div>
+	<div id="fullpage" class="text-center">
+		
+		<div class="section section-1" id="home">
+			<div class="text-center">				
+				<h2 >Plug. Pair. Play</h2>
+				<div ng-animation ng-width="{{w}}"></div>
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-10">
+							<p>Plugzee simply connects to the 3.5mm audio cable of any active speaker, pairs with your phone via Bluetooth and lets you stream music wirelessly.</p>
+						</div>
+						<div class="col-md-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="container signup" ng-controller="FromSubmit" >
+				<form class=" form-inline" name="signupForm" id="signupForm">
+					<div class="form-group">
+						<input type="text" ng-init="name=''" ng-model="name" placeholder="Name" required>
+					</div>
+					<div class="form-group">
+						<input type="email" ng-init="emails=''" ng-model="emails" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<button  class="submit signup-button" ng-click="post(name,emails)" value="Signup">Sign up</button>
+					</div>
+					<p ng-init="result=false" ng-model="result" ng-show="result">Success <span ng-click="again()">Sign up again</span></p>
+
+				</form>
+				<p class="signup-text">Sign-up to stay updated about our products!</p>
+			</div>
+		</div>
+		<div class="section section-2 text-center" id="about" >
+			<div class="unskew">
+				<h2 style="font-weight:bold">Features</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/bt.svg">
+							<p>Experience the unique features and great pairing capabilities of BLE 4.0
+							</p>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/usb.svg">
+							<p>No more additional wires, charge with existing micro USB cable</p>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/codec.svg">
+							<p>Enjoy high quality audio streaming over Bluetooth with AptX codec
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/battery.svg">
+							<p>18 hours of playback & 30 day standby to listen music uninterruptedly on-the-go
+							</p>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/mic.svg">
+							<p>Answer calls hands-free with an in-built noise cancelling microphone
+							</p>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<img src="assets/images/icons/distance.svg">
+							<p>With a range of 15 meters, stream music from any corner of the room</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-4"  id="indiegogo">
+			<div class="container-fluid unskew">
+				<div class="row">
+					<div class="col-md-5 col-xs-5"></div>
+					<div class="col-md-2 col-xs-2">
+						<img src="assets/images/indiegogo.png" class="img-responsive indiegogo">
+					</div>
+					<div class="col-md-5 col-xs-5"></div>
+				</div>
+				<div class="row raised">
+					<div class="col-md-1"></div>
+					
+					<div class="col-md-10">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width:0%">
+								$10,000 <sub>pledged</sub>
+							</div>
+							<div class="progress-bar progress-bar-info" style="width:0%">
+								$42,160 <sub>raised</sub>
+							</div>
+						</div>
+						<span class="milestones">
+							Raised
+							$<span class="amount" data-from="0" data-to="42160" data-speed="2000" data-refresh-interval="10" ></span>
+						</span>
+						<span class="milestones">
+							Backers
+							<span class="amount" data-from="0" data-to="1502" data-speed="2000" data-refresh-interval="10" ></span>
+						</span>
+						<span class="milestones">
+							Funded
+							<span class="amount" data-from="0" data-to="421" data-speed="2000" data-refresh-interval="10" ></span>%
+						</span>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-5">
+						<h3>The World Loves Plugzee</h3>
+						<p>With over 1500 backers from 62 different countries, Plugzee has been receiving amazing reviews from all across the world.</p>
+						<img src="assets/images/map.svg" alt="" class="map">
+					</div>
+					<div class="col-md-5 testimonials" >
+						<h4>Here's What People Are Saying!</h4>
+						<div class="coverflow">
+							<div class="cover">
+								<!-- <img src="http://placehold.it/250x250">
+								<h5>Some Great stuff mate</h5>
+								<p>Some great shit</p>
+							-->		
+							<div class="cards">				
+								<blockquote>
+									<p>Best Bluetooth adapter for my car ever. Plugzee delivers by far the best sound.
+									</p>
+									<strong>
+										<img src="assets/images/girl.png" class="pull-left">
+										<div>
+											<cite>Mihaela Jakić</cite>
+											<cite>iOS Developer </cite>
+											<cite>Croatia</cite>
+										</div>
+									</strong>
+								</blockquote>
+
+							</div>
+						</div>
+						<div class="cover">
+							<!-- <img src="http://placehold.it/250x250" > -->
+								<!-- <img src="http://placehold.it/250x250">
+								<h4>Some Great stuff mate</h4>
+								<p>Niggerjun yeah!</p> -->
+								<div class="cards">	
+									<blockquote>
+										<p>I got my Plugzee today, and my old stereo has been reborn. Thank you guys!
+										</p>
+										<strong>
+											<img src="assets/images/guy2.png" class="pull-left">
+											<div>
+												<cite>Masayasu Nakamura</cite>
+												<cite>Backer</cite>
+												<cite>Japan</cite>
+											</div>
+										</strong>
+									</blockquote>
+								</div>
+							</div>
+							<div class="cover">
+								<!-- <img src="http://placehold.it/250x250" > --><!-- 
+								<img src="http://placehold.it/250x250">
+								<h4>Some Great stuff mate</h4>
+								<p>Bitches ain't shit but hoes and tricks</p> -->
+								<div class="cards">	
+									<blockquote>
+										<p>Got the Plugzee device and I’m using it with a Samsung S4. It’s working great! Thanks guys!
+										</p>
+										<strong>
+											<img src="assets/images/guy3.png" class="pull-left">
+											<div>
+												<cite>Catalin Dobrescu</cite>
+												<cite>Software Engineer</cite>
+												<cite>Romania</cite>
+											</div>
+										</strong>
+									</blockquote>
+									
+								</div>
+							</div>
+							<div class="cover">
+								<!-- <img src="http://placehold.it/250x250" > -->
+								<!-- <img src="http://placehold.it/250x250">
+								<h4>Some Great stuff mate</h4>
+								<p>Bitches ain't shit but hoes and tricks</p> -->
+								<div class="cards">	
+									<blockquote>
+										<p>Plugzee works great and I use it often to connect to my speakers at home!
+										</p>
+
+										<strong>
+											<img src="assets/images/guy.png" class="pull-left">
+											<div>
+												<cite>Henry Scholl</cite>
+												<cite>Indiegogo Staff</cite>
+												<cite>United States</cite>
+											</div>
+										</strong>
+									</blockquote>
+								</div>
+							</div>
+							<div class="cover">
+								<!-- <img src="http://placehold.it/250x250" > -->
+								<!-- <img src="http://placehold.it/250x250"> -->
+								<div class="cards">	
+									<blockquote>
+										<p>Easy installation and sounds good! Was pleasantly surprised that iPhone shows Plugzee’s battery level.</p>
+										<strong>
+											<img src="assets/images/guy2.png" class="pull-left">
+											<div>
+												<cite>Maximilian Keller</cite>
+												<cite>Backer</cite>
+												<cite>Germany</cite>
+											</div>
+										</strong>
+									</blockquote>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+		</div>
+		<div class="section fp-auto-height ghost-section-2" ng-controller="MainCtrl" >
+			<div class="container unskew">
+				<!-- <div class="row"> -->
+				<!-- <div class="col-md-1"></div> -->
+				<!-- <div class="col-md-5">
+					<h5>Get your Plugzee today and add more life to your speakers</h5>
+					<span class="order-now">Pre-Order</span>
+				</div> -->
+				<!-- <div class="col-md-10">
+					<h5>Read In-Dept About Our Journey With Plugzee On Our Campaign Page</h5>
+				</div>
+				<div class="col-md-1"></div>
+			</div> -->
+			<div class="row">
+				<div class="col-md-6">
+					<p>Learn more about us on Indiegogo</p>
+					<span class="order-now" onclick="window.open('https://www.indiegogo.com/projects/plugzee-a-wireless-solution-to-all-your-audio#/')">VISIT PAGE</span>
+				</div>
+				<div class="col-md-6" ng-controller="FromSubmit">
+					<form class=" form signup" name="signupForm" id="signupForm">
+						<div class="row">
+							<div class="col-md-4 form-group">
+								<input type="text" ng-init="name=''" ng-model="name" placeholder="Name" required>
+							</div>
+							<div class="col-md-5 form-group">
+								<input type="email" ng-init="emails=''" ng-model="emails" placeholder="Email" required>
+							</div>
+							<div class="col-md-3">
+								<button  class="submit signup-button" ng-click="post(name,emails)" value="Signup">Sign up</button>
+								<p ng-init="result=false" ng-model="result" ng-show="result">Success</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- <button type="button" ng-click="clickToOpen()" ng-dialog-class="ngdialog-theme-default" class="ng-isolate-scope">Buy Now</button> -->
+	</div>
+	<div class="filler">
+	</div>
+	<div class="section fp-auto-height section-5" id="contact">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<h2 class="white"><strong>Estonia</strong></h2>
+					<!-- <p>Riia 181a, Tartu, Estonia</p>
+					<p>+372 58333379</p> -->
+					<img src="assets/images/estoniapin.png" alt="" class="estoniapin bounce">
+					<img src="assets/images/estonia.png" alt="" class="img-responsive">
+				</div>
+				<div class="col-md-4">
+					<a href="https://www.facebook.com/plugzee" target="_blank" class="social-icons"><!-- <span class="icon icon-socialmedia-08"> </span>--><img src="assets/images/fb.svg" class=""></a>
+					<!-- youtube -->
+					<a href="https://www.youtube.com/channel/UC_owTacIEin0r5sXZIoJjmg" target="_blank" class="social-icons"><!-- <span class="icon icon-socialmedia-29"></span> --><img src="assets/images/youtube.svg" class=""></a>
+					<!-- email -->
+					<!-- <a href="mailto:info@plugzee.com" target="_blank" class="social-icons"><span class="fa fa-envelope"></span></a> -->
+					<!-- twitter -->
+					<a href="https://twitter.com/plugzee" target="_blank" class="social-icons"><!-- <span class="icon icon-socialmedia-07"></span> --><img src="assets/images/twitter.svg" class=""></a>
+					<!-- Google+ -->
+					<a href="https://plus.google.com/113542799831640851519/about" target="_blank" class="social-icons"><!-- <span class="icon icon-socialmedia-16"></span> --><img src="assets/images/g+.svg" class=""></a>
+
+					<p class="white"><strong>
+						E: <a href="mailto:info@plugzee.com">info@plugzee.com</a>
+						<br/>
+						M: +91 8806013736
+						<br/>
+						Riia Street, 181A, 
+						Tartu, Estonia 51014
+					</strong></p>
+				</div>
+				<div class="col-md-4">
+					<h2 class="white"><strong>Goa</strong></h2>
+					<!-- <p>Shivangi Building, Panaji, Goa, India</p>
+					<p>+91 880 601 3736</p> -->
+					<img src="assets/images/goapin.png" alt="" class="goapin bounce">
+					<img src="assets/images/goa.png" alt="" class="img-responsive">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- jQuery -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script> -->
+<!-- Bootstrap -->
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Fullpage.js -->
+<script type="text/javascript" src="bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+<script type	="text/javascript" src="bower_components/fullpage.js/jquery.fullPage.js"></script>
+<!-- Angular JS -->
+
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script src="http://player.animatron.com/latest/bundle/animatron.min.js"></script>
+<!-- jQuerys countTo -->
+<script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
+<!-- ngDialog -->
+<!-- Coverflow -->
+<script type="text/javascript" src="bower_components/coverflow/jquery.coverflow.js"></script>
+<script type="text/javascript" src="assets/js/init.js"></script>
+<script type="text/javascript" src="assets/js/test.js"></script>
+<script type="text/javascript">
+	$('.amount').countTo();
+	$('.anm-controls').remove()
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('.coverflow').coverflow();
+		$('.coverflow').coverflow('option', 'enableWheel', false);
+			// $('.coverflow').options.enableClick (boolean, default: false);
+		});
+</script>
+
+<script type="text/javascript">
+	$(window).scroll(function() {    
+		var scroll = $(window).scrollTop();
+
+     //>=, not <=
+     if (scroll >= 500) {
+        //clearHeader, not clearheader - caps H
+        $("header").addClass("fixed-menu");
+    } else {
+    	$("header").removeClass("fixed-menu");
+    }
+});	
+</script>
+</body>
+</html>
