@@ -25,7 +25,7 @@
 	});
 	app.controller('FromSubmit', ['$scope','$http', function($scope, $http, transformRequestAsFormPost){
 		$scope.post = function(names,emails) {
-			if ($scope.signupForm.$valid){
+			// if ($scope.signupForm.$valid || $scope.signupFormb.$valid ){
 				$http.post("http://plugzee-signup.herokuapp.com/new", { name: names, email: emails }).success(function(result) {
 					console.log(result);
 					$scope.resultPost = result;
@@ -34,9 +34,9 @@
 				}).error(function() {
 					console.log("error");
 				});
-			} else {
-				console.log("Error");
-			}
+			// } else {
+				// console.log($scope.signupFormb.$valid);
+			// }
 		};
 		$scope.again = function(){
 			$scope.result = false;
