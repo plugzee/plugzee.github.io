@@ -760,3 +760,8 @@ blockquote p{
 .share-buttons img{
 	display: block
 }
+
+.thank_you{
+	color: #298ac4 !important;
+	padding:padding:1% 0% 1% 0%;
+}

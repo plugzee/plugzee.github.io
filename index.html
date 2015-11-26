@@ -51,7 +51,7 @@
 	});
 	</script>
 </head>
-<body>
+<body ng-controller="FromSubmit" ng-init="result=false">
 	<div class="se-pre-con"></div>	
 	<header>
 		<div class="container text-center navigation" ng-controller="MenuCtrl">
@@ -107,8 +107,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="container signup" ng-controller="FromSubmit" >
-				<form class=" form-inline" name="signupForm" id="signupForm">
+			<div class="container signup" >
+				<form class=" form-inline" name="signupForm" id="signupForm" ng-show="!result">
 					<div class="form-group">
 						<input type="text" ng-init="name=''" ng-model="name" placeholder="Name" required>
 					</div>
@@ -118,10 +118,13 @@
 					<div class="form-group">
 						<button  class="submit signup-button" ng-click="post(name,emails)" value="Signup">Sign up</button>
 					</div>
-					<p ng-init="result=false" ng-model="result" ng-show="result">Success <span ng-click="again()">Sign up again</span></p>
-
+					
+					<p class="signup-text" ng-show="!result">Sign up to stay updated about our products</p>
 				</form>
-				<p class="signup-text">Sign up to stay updated about our products</p>
+				<strong><h4 class="thank_you" ng-show="result" >Thank you for signing up!</h4></strong>
+				<!-- <p  ng-model="result" ng-show="result"><span ng-click="again()">Sign up again</span></p> -->
+
+				
 			</div>
 		</div>
 		<div class="section section-2 text-center" id="about" >
@@ -334,8 +337,8 @@
 					<p>Learn more about us on Indiegogo</p>
 					<span class="order-now" onclick="window.open('https://www.indiegogo.com/projects/plugzee-a-wireless-solution-to-all-your-audio#/')">VISIT PAGE</span>
 				</div>
-				<div class="col-md-6" ng-controller="FromSubmit">
-					<form class=" form signup" name="signupForm" id="signupForm">
+				<div class="col-md-6">
+					<form class=" form signup" name="signupForm" id="signupForm" ng-show="!result">
 						<div class="row">
 							<div class="col-md-4 form-group">
 								<input type="text" ng-init="name=''" ng-model="name" placeholder="Name" required>
@@ -345,10 +348,11 @@
 							</div>
 							<div class="col-md-3">
 								<button  class="submit signup-button" ng-click="post(name,emails)" value="Signup">Sign up</button>
-								<p ng-init="result=false" ng-model="result" ng-show="result">Success</p>
+								
 							</div>
 						</div>
 					</form>
+					<strong><h4 class="thank_you" ng-show="result" >Thank you for signing up!</h4></strong>
 				</div>
 			</div>
 		</div>
