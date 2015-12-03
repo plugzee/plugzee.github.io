@@ -157,6 +157,10 @@ no-js #loader { display: none;  }
 		padding: 17% 0% 5% !important;
 	}
 
+	.cards{
+		width: 270px !important;
+	}
+
 }
 
 
@@ -209,6 +213,9 @@ no-js #loader { display: none;  }
 
 	.social-icons{
 		margin-top: 0% !important;
+	}
+	.cards{
+		width: 270px !important;
 	}
 
 }
@@ -558,7 +565,7 @@ no-js #loader { display: none;  }
 }
 
 .section-5 p{
-	padding: 0% 15% 0% 25%;
+	padding: 0% 14% 0% 25%;
 	font-size: 1.1em;
 	text-align: left;
 }
@@ -578,7 +585,7 @@ no-js #loader { display: none;  }
 	z-index: -1;
 	position:absolute;
 	content:"";
-	height:300px;
+	height:500px;
 	width:100%;
 	margin-top: -15%;
 	background-color: #3d566e;
@@ -707,6 +714,10 @@ sub{
 		padding-top: 8% !important;
 		padding-bottom: 8% !important;
 	}
+
+	.cards{
+		width: 300px !important;
+	}
 }
 
 
@@ -720,7 +731,6 @@ sub{
 }
 
 .cards{
-	width: 300px !important;
 	background-color:#fff;
 	color: black !important;
 	padding: 15% 3% 15% 3%;
@@ -763,5 +773,27 @@ blockquote p{
 
 .thank_you{
 	color: #298ac4 !important;
-	padding:padding:1% 0% 1% 0%;
+	padding: 1% 0% 1% 0%;
+	margin-bottom: 2.9%;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content{
+	background-color: transparent !important;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before{
+	color : white !important;
+	background-color: #F27064 !important;
+	border-radius: 0.5em !important;
+}
+
+@media only screen and ( min-device-width : 2000px){
+	.fixed-menu .order-now-align {
+		padding-top: 0.5%;
+	}
+
+	.order-now{
+		padding-top: 3.5%;
+		padding-bottom: 3.5%;
+	}
 }

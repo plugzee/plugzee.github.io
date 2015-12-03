@@ -1,5 +1,6 @@
 (function(){
 	var app = angular.module('landingPage',['ngDialog']);
+
 	app.config(function($httpProvider) {
       //Enable cross domain calls
       $httpProvider.defaults.useXDomain = true;
@@ -9,7 +10,11 @@
 	app.controller('MainCtrl',function($scope, ngDialog){
 		$scope.clickToOpen = function (){
 			console.log("I reached here");
-			ngDialog.open({ url: 'http://www.google.com'});
+			ngDialog.open({ 
+				template: "<a href='http://igg.me/at/plugzee/x' target='_blank'><img src='/assets/images/cybermonday.jpg' class='img-responsive'></a>",
+				plain: true,
+				scope:$scope
+			});
 		};
 	});
 	app.controller('VideoCtrl',function($scope){
@@ -22,18 +27,20 @@
 			$scope.show = !$scope.show;
 			console.log($scope.show);
 		};
+
 	});
 	app.controller('FromSubmit', ['$scope','$http', function($scope, $http, transformRequestAsFormPost){
 		$scope.post = function(names,emails) {
 			// if ($scope.signupForm.$valid || $scope.signupFormb.$valid ){
-				$http.post("http://plugzee-signup.herokuapp.com/new", { name: names, email: emails }).success(function(result) {
-					console.log(result);
-					$scope.resultPost = result;
-					console.log("*********")
-					$scope.result = true;
-				}).error(function() {
-					console.log("error");
-				});
+				// $http.post("http://plugzee-signup.herokuapp.com/new", { name: names, email: emails }).success(function(result) {
+					$http.post("https://app.mailerlite.com/api/v1/subscribers/2888617/?apiKey=ba49f449d5d71224ed014203dc222185", { name: names, email: emails }).success(function(result) {
+						console.log(result);
+						$scope.resultPost = result;
+						console.log("*********")
+						$scope.result = true;
+					}).error(function() {
+						console.log("error");
+					});
 			// } else {
 				// console.log($scope.signupFormb.$valid);
 			// }

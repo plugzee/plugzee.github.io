@@ -21,7 +21,12 @@
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-
+	<!-- open grap tags -->
+	<meta property="og:title" content="Plugzee">
+	<meta property="og:url" content="http://www.plugzee.com">
+	<meta property="og:image" content="http://www.plugzee.com/assets/images/plugzee-image.jpg">
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="720" />
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,6 +54,17 @@
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut(500);;
 	});
+	</script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-57238626-1', 'auto');
+		ga('send', 'pageview');
+
 	</script>
 </head>
 <body ng-controller="FromSubmit" ng-init="result=false">
@@ -169,11 +185,11 @@
 		<div class="section section-4"  id="indiegogo">
 			<div class="container-fluid unskew">
 				<div class="row">
-					<div class="col-md-5 col-xs-5"></div>
-					<div class="col-md-2 col-xs-2">
-						<img src="assets/images/indiegogo.png" class="img-responsive indiegogo">
+					<div class="col-md-5 col-xs-4"></div>
+					<div class="col-md-2 col-xs-4">
+						<img src="assets/images/indiegogo.svg" class="img-responsive indiegogo">
 					</div>
-					<div class="col-md-5 col-xs-5"></div>
+					<div class="col-md-5 col-xs-4"></div>
 				</div>
 				<div class="row raised">
 					<div class="col-md-1"></div>
@@ -224,7 +240,7 @@
 									<strong>
 										<img src="assets/images/girl.png" class="pull-left">
 										<div>
-											<cite>Mihaela Jakić</cite>
+											<cite>Mihaela Jakic</cite>
 											<cite>iOS Developer </cite>
 											<cite>Croatia</cite>
 										</div>
@@ -260,7 +276,7 @@
 								<p>Bitches ain't shit but hoes and tricks</p> -->
 								<div class="cards">	
 									<blockquote>
-										<p>Got the Plugzee device and I’m using it with a Samsung S4. It’s working great! Thanks guys!
+										<p>Got the Plugzee device and I’m using it with a Samsung S4. It's working great! Thanks guys!
 										</p>
 										<strong>
 											<img src="assets/images/guy3.png" class="pull-left">
@@ -338,8 +354,8 @@
 					<span class="order-now" onclick="window.open('https://www.indiegogo.com/projects/plugzee-a-wireless-solution-to-all-your-audio#/')">VISIT PAGE</span>
 				</div>
 				<div class="col-md-6">
-					<form class="form signup" name="signupForm" id="signupForm" ng-show="!result">
-						<div class="row">
+					<form class="form signup" name="signupForm" id="signupForm" >
+						<div class="row" ng-show="!result">
 							<div class="col-md-4 form-group">
 								<input type="text" ng-init="name=''" ng-model="name" placeholder="Name" required>
 							</div>
@@ -351,8 +367,15 @@
 								
 							</div>
 						</div>
+						<div class="row" ng-show="result">
+							<div class="col-md-2"></div>
+							<div class="col-md-8">
+								<strong><h4 class="thank_you" style="color:white!important;margin-top:2.9%">Thank you for signing up!</h4></strong>
+							</div>
+							<div class="col-md-2"></div>
+						</div>
 					</form>
-					<strong><h4 class="thank_you" ng-show="result" >Thank you for signing up!</h4></strong>
+					
 				</div>
 			</div>
 		</div>
@@ -401,6 +424,10 @@
 		</div>
 	</div>
 </div>
+
+<div class="hidden" ng-controller="MainCtrl">
+	<span ng-click="clickToOpen()" id="offerCyberMonday">OfferCyberMonday</span>
+</div>
 <!-- jQuery -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -432,7 +459,13 @@
 		$('.coverflow').coverflow();
 		$('.coverflow').coverflow('option', 'enableWheel', false);
 			// $('.coverflow').options.enableClick (boolean, default: false);
-		});
+
+		// CYBER MONDAY OFFER
+		setTimeout(function(){
+			$('#offerCyberMonday').click()
+		},10000);
+		
+	});
 </script>
 
 <script type="text/javascript">
@@ -448,5 +481,7 @@
     }
 });	
 </script>
+
+
 </body>
 </html>
